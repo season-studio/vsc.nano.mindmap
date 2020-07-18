@@ -1,0 +1,12 @@
+.vscode/**
+.vscode-test/**
+test/**
+webview/**
+.gitignore
+vsc-extension-quickstart.md
+**/jsconfig.json
+**/*.map
+**/.eslintrc.json
+**/.private.txt
+**/readme.xmind
+**/*.log
