@@ -2,9 +2,9 @@
 	"name": "vsc-nano-mindmap",
 	"displayName": "nano Mindmap",
 	"description": "Edit mindmap in Visual Studio Code",
-    "version": "0.6.4",
-    "publisher": "season-studio",
-    "icon": "images/logo.png",
+	"version": "0.6.4",
+	"publisher": "season-studio",
+	"icon": "images/logo.png",
 	"engines": {
 		"vscode": "^1.46.0"
 	},
@@ -12,34 +12,34 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:vsc-nano-mindmap.newMindMap",
-        "onCommand:vsc-nano-mindmap.openMindMap",
-        "onCustomEditor:vsc-nano-mindmap.mindmapView"
+		"onCommand:vsc-nano-mindmap.newMindMap",
+		"onCommand:vsc-nano-mindmap.openMindMap",
+		"onCustomEditor:vsc-nano-mindmap.mindmapView"
 	],
 	"main": "./src/main.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "vsc-nano-mindmap.newMindMap",
-				"title": "new mind map"
-            },
-            {
+				"title": "Nano-MindMap: New Mind Map"
+			},
+			{
 				"command": "vsc-nano-mindmap.openMindMap",
-				"title": "open mind map"
+				"title": "Nano-MindMap: Open Mind Map"
 			}
-        ],
-        "customEditors": [
-            {
-                "viewType": "vsc-nano-mindmap.mindmapView",
-                "displayName": "nano mindmap",
-                "selector": [
-                    {
-                        "filenamePattern": "*.xmind"
-                    }
-                ],
-                "priority": "default"
-            }
-        ]
+		],
+		"customEditors": [
+			{
+				"viewType": "vsc-nano-mindmap.mindmapView",
+				"displayName": "nano mindmap",
+				"selector": [
+					{
+						"filenamePattern": "*.xmind"
+					}
+				],
+				"priority": "default"
+			}
+		]
 	},
 	"scripts": {
 		"lint": "eslint .",
@@ -47,11 +47,13 @@
 		"test": "node ./test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.46.0",
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^7.0.2",
 		"@types/node": "^13.11.0",
+		"@types/vscode": "^1.46.0",
+		"babel-eslint": "^10.1.0",
 		"eslint": "^6.8.0",
+		"eslint-plugin-vue": "^6.2.2",
 		"glob": "^7.1.6",
 		"mocha": "^7.1.2",
 		"typescript": "^3.8.3",

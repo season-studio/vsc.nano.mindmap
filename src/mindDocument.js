@@ -3,7 +3,6 @@ const vscode = require("vscode");
 const fs = require("fs");
 const WebView = require("./webview");
 const lang = require("./lang/lang");
-const path = require("path");
 
 const docList = {};
 
