@@ -75,7 +75,7 @@ export default function () {
             height: 17,
             html: '<path d="M2 13H15V4H5M5 3L3.5 4L5 5V3L3.5 4" />'
         },
-        caption: 'Undo',
+        caption: 'Undo (Ctrl+Z)',
         fn: this.onUndo,
     }, {
         svg: {
@@ -83,7 +83,7 @@ export default function () {
             height: 17,
             html: '<path d="M15 13H2V4H13M12 3L13.5 4L12 5V3L13.5 4" />'
         },
-        caption: 'Redo',
+        caption: 'Redo (Ctrl+Y)',
         fn: this.onRedo
     }, {
         svg: {
@@ -101,7 +101,7 @@ export default function () {
             height: 17,
             html: '<path d="M2 3H17V7H2V3H4M2.5 12H7.5M5 9.5V14.5M10 7V12H13M14 10H25V14H13V10H17" />'
         },
-        caption: 'Add Child',
+        caption: 'Add Child (Ctrl+Down)',
         fn: () => this.execCmd('addSubTopic')
     }, {
         svg: {
@@ -109,7 +109,7 @@ export default function () {
             height: 17,
             html: '<path d="M1 8H7M4 5V11M10 5H25V11H10V5H17M10 8H25" />'
         },
-        caption: 'Add Sibling',
+        caption: 'Add Sibling (Ctrl+Right)',
         notForRoot: true,
         fn: () => this.execCmd('addSiblingTopic')
     }, {
@@ -130,7 +130,7 @@ export default function () {
             viewBox: "0 0 22 22",
             html: '<path d="M3 10.5L7 5H19V17H7L3 10.5M6 10.5A2 2 0 1 1 10 10.5A2 2 0 1 1 6 10.5" />'
         },
-        caption: 'Lables',
+        caption: 'Labels',
         fn: () => this.invokePropertyEditor('labels')
     }, {
         svg: {
