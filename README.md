@@ -62,4 +62,4 @@ Visual Studio Code Market Place: vsc-nano-mindmap
 ## Contact
 Please report the issues on https://github.com/season-studio/vsc.nano.mindmap/issues
 
-Or mail to season_studio@ooutlook.com if you have any question.
+Or mail to season_studio@outlook.com if you have any question.

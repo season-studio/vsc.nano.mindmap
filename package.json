@@ -2,19 +2,29 @@
 	"name": "vsc-nano-mindmap",
 	"displayName": "nano Mindmap",
 	"description": "Edit mindmap in Visual Studio Code",
-    "version": "0.6.4",
-    "publisher": "season-studio",
+	"version": "0.6.6",
+	"publisher": "season-studio",
     "icon": "images/logo.png",
+    "license": "MIT",
+    "homepage": "https://github.com/season-studio/vsc.nano.mindmap",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/season-studio/vsc.nano.mindmap.git"
+    },
+    "bugs": {
+        "url": "https://github.com/season-studio/vsc.nano.mindmap/issues",
+        "email": "season_studio@outlook.com"
+    },
 	"engines": {
-		"vscode": "^1.46.0"
+		"vscode": "^1.48.0"
 	},
 	"categories": [
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:vsc-nano-mindmap.newMindMap",
-        "onCommand:vsc-nano-mindmap.openMindMap",
-        "onCustomEditor:vsc-nano-mindmap.mindmapView"
+		"onCommand:vsc-nano-mindmap.newMindMap",
+		"onCommand:vsc-nano-mindmap.openMindMap",
+		"onCustomEditor:vsc-nano-mindmap.mindmapView"
 	],
 	"main": "./src/main.js",
 	"contributes": {
@@ -22,24 +32,24 @@
 			{
 				"command": "vsc-nano-mindmap.newMindMap",
 				"title": "new mind map"
-            },
-            {
+			},
+			{
 				"command": "vsc-nano-mindmap.openMindMap",
 				"title": "open mind map"
 			}
-        ],
-        "customEditors": [
-            {
-                "viewType": "vsc-nano-mindmap.mindmapView",
-                "displayName": "nano mindmap",
-                "selector": [
-                    {
-                        "filenamePattern": "*.xmind"
-                    }
-                ],
-                "priority": "default"
-            }
-        ]
+		],
+		"customEditors": [
+			{
+				"viewType": "vsc-nano-mindmap.mindmapView",
+				"displayName": "nano mindmap",
+				"selector": [
+					{
+						"filenamePattern": "*.xmind"
+					}
+				],
+				"priority": "default"
+			}
+		]
 	},
 	"scripts": {
 		"lint": "eslint .",
@@ -47,14 +57,14 @@
 		"test": "node ./test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.46.0",
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^7.0.2",
-		"@types/node": "^13.11.0",
+		"@types/node": "^13.13.15",
+		"@types/vscode": "^1.48.0",
 		"eslint": "^6.8.0",
 		"glob": "^7.1.6",
 		"mocha": "^7.1.2",
-		"typescript": "^3.8.3",
+		"typescript": "^3.9.7",
 		"vscode-test": "^1.3.0"
 	}
 }

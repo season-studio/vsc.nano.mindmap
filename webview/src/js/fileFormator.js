@@ -36,7 +36,7 @@ function xmindHtmlNotes2Plain(_html, _tag) {
     let ret;
     if (_tag === "text") {
         ret = _html + "\r\n";
-    } else if (_html) {
+    } else if (_html && (typeof _html === "object")) {
         ret = "";
         for (let idx in _html) {
             ret += xmindHtmlNotes2Plain(_html[idx], idx);

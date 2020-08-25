@@ -178,13 +178,15 @@ async function loadClassicAttachments(_xmindFile, _zip) {
         const manifestDoc = parser.parseFromString(manifestXML, "text/xml");
         const manifestList = manifestDoc.documentElement.childNodes;
         for (let item of manifestList) {
-            let path = item.getAttribute("full-path").trim();
-            if ((!path.endsWith("/")) && path.startsWith(constants.CLASSIC_ATTACHMENT_PATH)) {
-                const attachmentFile = _zip.file(path);
-                if (attachmentFile) {
-                    path = path.replace(new RegExp(attachmentRegexpStr), constants.ZEN_RESOURCE_PATH);
-                    const data = await attachmentFile.async("blob");
-                    _xmindFile.setAttachment(path, data);
+            if (item.hasAttribute("full-path")) {
+                let path = item.getAttribute("full-path").trim();
+                if ((!path.endsWith("/")) && path.startsWith(constants.CLASSIC_ATTACHMENT_PATH)) {
+                    const attachmentFile = _zip.file(path);
+                    if (attachmentFile) {
+                        path = path.replace(new RegExp(attachmentRegexpStr), constants.ZEN_RESOURCE_PATH);
+                        const data = await attachmentFile.async("blob");
+                        _xmindFile.setAttachment(path, data);
+                    }
                 }
             }
         }
@@ -200,10 +202,10 @@ async function loadClassicComments(_xmindFile, _zip) {
         const commentsDoc = parser.parseFromString(commentsXML, "text/xml");
         const commentsList = commentsDoc.documentElement.childNodes;
         for (let item of commentsList) {
-            const id = item.getAttribute("id").trim();
-            const objectID = item.getAttribute("object-id").trim();
-            const author = item.getAttribute("author").trim();
-            const time = parseInt(item.getAttribute("time").trim());
+            const id = (item.getAttribute("id") || "").trim();
+            const objectID = (item.getAttribute("object-id") || "").trim();
+            const author = (item.getAttribute("author") || "").trim();
+            const time = parseInt((item.getAttribute("time") || Date.now().toString()).trim());
             let content = "";
             for (let contentItem of item.childNodes) {
                 if (contentItem.tagName === "content") {
