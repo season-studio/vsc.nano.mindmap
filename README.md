@@ -1,5 +1,10 @@
 # mindmap in vscode (vsc-nano-mindmap)
 This extension support editing the mind map in WYSIWYG mode in VSCode.
+**This extension is replaced by "Felis Mindmap".**
+**Please try the "Felis Mindmap".**
+https://marketplace.visualstudio.com/items?itemName=season-studio.felis-mindmap
+https://github.com/season-studio/felisMindmap.git
+
 ![screenshots](https://season-studio.github.io/nano-mindmap/images/screenshots-vscode.gif)
 
 ## Features
